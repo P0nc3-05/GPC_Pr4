@@ -8,21 +8,15 @@ public class Gancho : MonoBehaviour
     public Transform pcodo;
     public Transform ppinza1;
     public Transform ppinza2;
+    public Transform pganchos;
 
     public float velocidadRotacion = 50f;
     public float velocidadVertical = 2f;
 
+    private float rotacion = 0f;
+
     void Update()
     {
-        //PBASE
-        if (Input.GetKey(KeyCode.Q))
-        {
-
-        }
-        if (Input.GetKey(KeyCode.E))
-        {
-
-        }
         //PBRAZO
         if (Input.GetKey(KeyCode.Y))
         {
@@ -46,16 +40,19 @@ public class Gancho : MonoBehaviour
         //PPINZAS
         if (Input.GetKey(KeyCode.R))
         {
-            ppinza1.Rotate(0, 0, velocidadRotacion * Time.deltaTime);
-            ppinza2.Rotate(0, 0, -(velocidadRotacion * Time.deltaTime));
+            rotacion += velocidadRotacion * Time.deltaTime;
 
         }
         if (Input.GetKey(KeyCode.F))
         {
-            ppinza2.Rotate(0, 0, velocidadRotacion * Time.deltaTime);
-            ppinza1.Rotate(0, 0, -(velocidadRotacion * Time.deltaTime));
+            rotacion -= velocidadRotacion * Time.deltaTime;
 
         }
+        rotacion = Mathf.Clamp(rotacion, -25f, 90f);
+        ppinza1.localRotation = Quaternion.AngleAxis(rotacion, Vector3.forward);
+        ppinza2.localRotation = Quaternion.AngleAxis(-rotacion, Vector3.forward);
+
+        pganchos.Rotate(0, velocidadRotacion * Time.deltaTime, 0);
     }
 
 }
