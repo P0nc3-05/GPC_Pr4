@@ -2,16 +2,15 @@ using UnityEngine;
 
 public class grua : MonoBehaviour
 {
-    [Header("Movimiento en Z (Gr�a)")]
+   
     public float speed = 5f;
     public float minZ = 0.75f;
     public float maxZ = 7.25f;
     private float posicionZ = 0f;
 
-    [Header("Movimiento en Y (Gancho)")]
+   
     public float velocidadGancho = 10f;
 
-    [Header("Referencias Visuales")]
     public Transform cuerda;
     public Transform objetoCuelga;
     public Transform pivoteGancho;
@@ -44,7 +43,7 @@ public class grua : MonoBehaviour
 
     void Update()
     {
-        // --- 1. MOVIMIENTO HORIZONTAL (Eje Z) ---
+        // Movimiento de la grua
         float movimientoZ = speed * Time.deltaTime;
         Vector3 pos = transform.position;
 
@@ -59,31 +58,31 @@ public class grua : MonoBehaviour
             posicionZ -= movimientoZ;
         }
 
-        // --- 2. CONTROL DE RECOGIDA/DESCENSO (Manual) ---
+        // subida y bajada
         if (pivoteGancho != null)
         {
             Vector3 posPivote = pivoteGancho.localPosition;
             float movimiento = velocidadGancho * Time.deltaTime;
             float nuevaY = posPivote.y;
 
-            // Recoger/Subir si se presiona K (resta Y)
+            // Subir
             if (Input.GetKey(KeyCode.K))
             {
                 nuevaY -= movimiento;
             }
 
-            // Bajar si se presiona L (suma Y)
+            // Bajar
             if (Input.GetKey(KeyCode.L))
             {
                 nuevaY += movimiento;
             }
 
-            // Limitar la altura dentro del rango
+            // Limitar
             nuevaY = Mathf.Clamp(nuevaY, -80f, 0f);
             pivoteGancho.localPosition = new Vector3(posPivote.x, nuevaY, posPivote.z);
         }
 
-        // --- 3. ACTUALIZACI�N DE LA CUERDA Y EL GANCHO ---
+        // posiciones
         if (objetoCuelga != null && pivoteGancho != null)
         {
             objetoCuelga.position = pivoteGancho.position;
