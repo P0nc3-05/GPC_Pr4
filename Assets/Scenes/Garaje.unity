@@ -808,7 +808,7 @@ GameObject:
   m_Component:
   - component: {fileID: 209452344}
   m_Layer: 0
-  m_Name: pivotegancho
+  m_Name: pivotegrua
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -843,7 +843,7 @@ GameObject:
   - component: {fileID: 244196669}
   - component: {fileID: 244196668}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: cuerda
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2577,7 +2577,7 @@ GameObject:
   - component: {fileID: 1101001353}
   - component: {fileID: 1101001352}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: baseg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2689,7 +2689,7 @@ GameObject:
   - component: {fileID: 1112705779}
   - component: {fileID: 1112705778}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: coso
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5470,6 +5470,7 @@ MonoBehaviour:
   pcodo: {fileID: 1143019046}
   ppinza1: {fileID: 1486023072}
   ppinza2: {fileID: 1397068228}
+  pganchos: {fileID: 0}
   velocidadRotacion: 50
   velocidadVertical: 2
 --- !u!4 &1891864141509711721
