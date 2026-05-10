@@ -822,13 +822,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 209452343}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.8325, y: 5.091, z: 4.3507}
+  m_LocalScale: {x: 1.3265, y: 0.053496264, z: 1.0435421}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1112705777}
-  m_Father: {fileID: 555935446}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &244196666
 GameObject:
@@ -1527,7 +1527,6 @@ Transform:
   m_Children:
   - {fileID: 1101001355}
   - {fileID: 244196667}
-  - {fileID: 209452344}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &555935447
@@ -1542,15 +1541,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7df9cd71b07b5fd4fac0814e9fd3eea7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::grua
-  materialCuerda: {fileID: 0}
+  materialCuerda: {fileID: -3661639628750336703, guid: 7e0223e1d3e1733499accfa5ebffb67e, type: 3}
   cuerda: {fileID: 244196667}
   objeto: {fileID: 1112705777}
   pivoteGrua: {fileID: 209452344}
   BaseGrua: {fileID: 1101001355}
   velGrua: 10
-  vel: 10
+  vel: 2
   minZ: 0.75
   maxZ: 7.25
+  objetivoReferencia: {fileID: 1101001355}
+  suavizado: 2
 --- !u!1 &611671572
 GameObject:
   m_ObjectHideFlags: 0
@@ -5470,7 +5471,7 @@ MonoBehaviour:
   pcodo: {fileID: 1143019046}
   ppinza1: {fileID: 1486023072}
   ppinza2: {fileID: 1397068228}
-  pganchos: {fileID: 0}
+  pganchos: {fileID: 370424055}
   velocidadRotacion: 50
   velocidadVertical: 2
 --- !u!4 &1891864141509711721
@@ -5894,5 +5895,6 @@ SceneRoots:
   - {fileID: 985014516}
   - {fileID: 80133082}
   - {fileID: 2032701186}
+  - {fileID: 209452344}
   - {fileID: 555935446}
   - {fileID: 763475260034920715}
