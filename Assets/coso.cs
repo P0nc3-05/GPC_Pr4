@@ -12,7 +12,7 @@ public class coso : MonoBehaviour
     public float velGrua = 10f;
     public float vel = 10f;
     public float minZ = 0.75f;
-    public float maxZ = 7.25f;
+    public float maxZ = 0f;
     private float posZ = 0f;
 
     // El punto que está pegado a la grúa y se mueve instantáneamente
@@ -22,7 +22,7 @@ public class coso : MonoBehaviour
     private float distanciaInicial;
 
     [Range(0.1f, 10f)]
-    public float suavizado = 2.0f; // Menos valor = más retraso (más inercia)
+    public float suavizado = 10f; // Menos valor = más retraso (más inercia)
 
     void Update()
     {
@@ -57,9 +57,13 @@ public class coso : MonoBehaviour
                 cuerda.Rotate(90f, 0f, 0f);
             }
 
-            // Ajustamos la escala según la distancia real en este frame
-            float factorEscala = (distanciaInicial > 0) ? (distancia / distanciaInicial) : 1f;
-            cuerda.localScale = new Vector3(escalaOriginal.x, escalaOriginal.y * factorEscala, escalaOriginal.z);
+            // C) ESCALA: Estirar la cuerda
+            float factorEscala = distancia / distanciaInicial;
+            cuerda.localScale = new Vector3(
+                escalaOriginal.x, 
+                escalaOriginal.y * factorEscala, 
+                escalaOriginal.z
+            );
         }
     }
 }

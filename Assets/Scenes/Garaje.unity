@@ -807,6 +807,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 209452344}
+  - component: {fileID: 209452345}
   m_Layer: 0
   m_Name: pivotegrua
   m_TagString: Untagged
@@ -830,6 +831,29 @@ Transform:
   - {fileID: 1112705777}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &209452345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209452343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0251911b12396974eb7c1b8a95e06e16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::coso
+  materialCuerda: {fileID: -3661639628750336703, guid: 7e0223e1d3e1733499accfa5ebffb67e, type: 3}
+  cuerda: {fileID: 244196667}
+  objeto: {fileID: 1112705777}
+  pivoteGrua: {fileID: 209452344}
+  BaseGrua: {fileID: 1101001355}
+  velGrua: 10
+  vel: 10
+  minZ: 0.75
+  maxZ: 7.25
+  objetivoReferencia: {fileID: 1101001355}
+  suavizado: 2
 --- !u!1 &244196666
 GameObject:
   m_ObjectHideFlags: 0
@@ -1550,8 +1574,6 @@ MonoBehaviour:
   vel: 2
   minZ: 0.75
   maxZ: 7.25
-  objetivoReferencia: {fileID: 1101001355}
-  suavizado: 2
 --- !u!1 &611671572
 GameObject:
   m_ObjectHideFlags: 0

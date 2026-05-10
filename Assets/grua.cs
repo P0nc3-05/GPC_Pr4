@@ -11,7 +11,7 @@ public class grua : MonoBehaviour
     public float velGrua = 10f;
     public float vel = 10f;
     public float minZ = 0.75f;
-    public float maxZ = 7.25f;
+    public float maxZ = 0f;
     private float posZ = 0f;
 
     
@@ -82,10 +82,6 @@ public class grua : MonoBehaviour
         }
 
         // posiciones
-        if (objeto != null && pivoteGrua != null)
-        {
-            objeto.position = pivoteGrua.position;
-        }
 
         ActualizarCuerda();
     }
