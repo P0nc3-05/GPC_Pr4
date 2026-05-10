@@ -848,12 +848,8 @@ MonoBehaviour:
   objeto: {fileID: 1112705777}
   pivoteGrua: {fileID: 209452344}
   BaseGrua: {fileID: 1101001355}
-  velGrua: 10
-  vel: 10
-  minZ: 0.75
-  maxZ: 7.25
   objetivoReferencia: {fileID: 1101001355}
-  suavizado: 2
+  suavizado: 10
 --- !u!1 &244196666
 GameObject:
   m_ObjectHideFlags: 0
@@ -883,7 +879,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -19.4, z: 0}
-  m_LocalScale: {x: 0.023241224, y: 19.482807, z: 0.023241224}
+  m_LocalScale: {x: 0.023241224, y: 19.482807, z: 0.02324122}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 555935446}

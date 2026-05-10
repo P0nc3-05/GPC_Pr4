@@ -9,19 +9,12 @@ public class coso : MonoBehaviour
     public Transform pivoteGrua;
     public Transform BaseGrua;
 
-    public float velGrua = 10f;
-    public float vel = 10f;
-    public float minZ = 0.75f;
-    public float maxZ = 0f;
-    private float posZ = 0f;
-
     // El punto que está pegado a la grúa y se mueve instantáneamente
     public Transform objetivoReferencia; 
 
     private Vector3 escalaOriginal;
     private float distanciaInicial;
 
-    [Range(0.1f, 10f)]
     public float suavizado = 10f; // Menos valor = más retraso (más inercia)
 
     void Update()
@@ -38,10 +31,9 @@ public class coso : MonoBehaviour
 
     private void ActualizarCuerda()
     {
-        bool todoOk = (cuerda != null && objeto != null && BaseGrua != null);
+        
 
-        if (todoOk)
-        {
+        
             // La dirección se calcula hacia el gancho que va retrasado.
             // Esto hace que la cuerda se incline "atrás" cuando la grúa corre.
             Vector3 direccion = objeto.position - BaseGrua.position;
@@ -51,11 +43,8 @@ public class coso : MonoBehaviour
             cuerda.position = BaseGrua.position + direccion * 0.5f;
 
             // Rotamos para que mire siempre al gancho (línea recta)
-            if (direccion != Vector3.zero) 
-            {
                 cuerda.rotation = Quaternion.LookRotation(direccion);
                 cuerda.Rotate(90f, 0f, 0f);
-            }
 
             // C) ESCALA: Estirar la cuerda
             float factorEscala = distancia / distanciaInicial;
@@ -64,6 +53,6 @@ public class coso : MonoBehaviour
                 escalaOriginal.y * factorEscala, 
                 escalaOriginal.z
             );
-        }
+        
     }
 }

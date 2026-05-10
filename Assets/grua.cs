@@ -83,6 +83,7 @@ public class grua : MonoBehaviour
 
         // posiciones
 
+
         ActualizarCuerda();
     }
 
@@ -99,9 +100,7 @@ public class grua : MonoBehaviour
             cuerda.position = BaseGrua.position + direccion * 0.5f;
 
             
-            cuerda.rotation = Quaternion.LookRotation(direccion);
-            cuerda.Rotate(90f, 0f, 0f);
-
+            
 
 
             if (distanciaInicial > 0)
