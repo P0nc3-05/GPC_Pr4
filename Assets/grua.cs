@@ -2,16 +2,14 @@ using UnityEngine;
 
 public class grua : MonoBehaviour
 {
-    [Header("Movimiento en Z (Grúa)")]
+    [Header("Movimiento en Z (Grï¿½a)")]
     public float speed = 5f;
     public float minZ = 0.75f;
     public float maxZ = 7.25f;
     private float posicionZ = 0f;
 
     [Header("Movimiento en Y (Gancho)")]
-    public float velocidadGancho = 2f;
-    public float alturaMinima = -1f;
-    public float alturaMaxima = 0f;
+    public float velocidadGancho = 10f;
 
     [Header("Referencias Visuales")]
     public Transform cuerda;
@@ -81,11 +79,11 @@ public class grua : MonoBehaviour
             }
 
             // Limitar la altura dentro del rango
-            nuevaY = Mathf.Clamp(nuevaY, alturaMinima, alturaMaxima);
+            nuevaY = Mathf.Clamp(nuevaY, -80f, 0f);
             pivoteGancho.localPosition = new Vector3(posPivote.x, nuevaY, posPivote.z);
         }
 
-        // --- 3. ACTUALIZACIÓN DE LA CUERDA Y EL GANCHO ---
+        // --- 3. ACTUALIZACIï¿½N DE LA CUERDA Y EL GANCHO ---
         if (objetoCuelga != null && pivoteGancho != null)
         {
             objetoCuelga.position = pivoteGancho.position;
